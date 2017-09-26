@@ -1,0 +1,9 @@
+[submodule "deck.js"]
+	path = lib/deck.js
+	url = https://github.com/imakewebthings/deck.js.git
+[submodule "jquery"]
+	path = lib/jquery
+	url = https://github.com/jquery/jquery.git
+[submodule "katex"]
+	path = lib/katex
+	url = https://github.com/khan/katex.git
