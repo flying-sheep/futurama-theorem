@@ -48,7 +48,17 @@ $(() => {
 			{left: "$", right: "$", display: false},
 		],
 	})
+	
 	$.deck('.slide')
+
+	$(document).keypress(e => {
+		switch(e.key) {
+			case 'Home': $.deck('go', 0); break
+			case 'End':  $.deck('go', $.deck('getSlides').length - 1); break
+			default: return
+		}
+		e.preventDefault()
+	})
 })
 </script>
 
