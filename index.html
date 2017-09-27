@@ -67,6 +67,10 @@ $(() => {
 .invert {
 	filter: invert(1);
 }
+em {
+	font-style: normal;
+	color: #f0a;
+}
 </style>
 
 </head>
@@ -82,14 +86,9 @@ $(() => {
 <p><a>Note:</a>  Use arrow keys to advance slides, get an overview of slides by typing "m", go to specific slide by typing "g".</p>
 </section>
 
-<section class="slide" id="background">
+<section class="slide" id="cast">
 <h2>Futurama</h2>
-<ul>
-<li class="slide"><a href="http://en.wikipedia.org/wiki/Futurama" target="_blank">Futurama</a> is an American animated science fiction sitcom created by Matt Groening (of The Simpsons).</li>
-<li class="slide">The series aired on Fox from 1999-2003, and then began airing on Comedy Central in 2008. Final season ended in the summer of 2013.</li>
-<li class="slide">The show follows the adventures of a late 20th-century New York City pizza delivery boy, Philip J. Fry, who was accidentally frozen in 1999 and then thawed out on New Year's Eve 2999.</li>
-<li class="slide">Some main characters: Fry, Leela (one-eyed alien), Bender (robot), Professor Farnsworth (Fry's distant nephew and mad scientist), Zoidberg (lobster-like alien), Amy (spoiled and accident prone student), and more.</li>
-</ul>
+[Image of futurama cast]
 </section>
 
 <section class="slide" id="diff-eq-clip">
@@ -99,28 +98,26 @@ $(() => {
 </section>
 
 <section class="slide" id="show-details">
-<h2>The Prisoner of Benda</h2>
+<h2>The mind swap problem</h2>
 <ul>
-<li class="slide">"The Prisoner of Benda" is episode 10 of season 6 and aired in August, 2010.</li>
-<li class="slide">The title is a play on "The Prisoner of Zenda", a 1894 novel by Anthony Hope Hawkins.</li>
-<li class="slide">In the episode, Farnsworth and Amy build a machine that allows them to switch minds. However, they learn that the machine cannot be used twice on the same pair of <a>bodies</a>. After several characters swap minds, the rest of the episode is focused on how to return everyone's minds back to their original owner.</li>
-<li class="slide">With the help of two Harlem Globetrotters (and some mathematics), the irreversible mind swap problem is solved.</li>
-<li class="slide">Episode written by Ken Keeler, who has a PhD in applied mathematics from Harvard.</li>
-<li class="slide">Keeler came up with and proved a mathematical theorem specifically for the show. Called <a>The Futurama Theorem</a> or <a>Keeler's Theorem</a>.</li>
+	<li class="slide">Don’t you just hate to wake up in the wrong body?</li>
+	<li class="slide">…and learn that your mind swapper can’t be used twice on the same pair of <em>bodies</em>?</li>
+	<li class="slide">…and there’s a limited amount of willing interim swappees around?</li>
+	<li class="slide">(Solution and proof by Ken Keeler – Harvard PhD in applied mathematics and Futurama episode writer.)</li>
 </ul>
 </section>
 
-<section class="slide">
+<section class="slide" id="problem">
 <h2>The mind swap problem</h2>
-<p>Here are the swaps that take place during the episode:</p>
+<p>This is what you pieced together:</p>
 <ul>
-<li class="slide">Professor ($p$) $\leftrightarrow$ Amy ($a$)</li>
-<li class="slide">Amy ($a$) $\leftrightarrow$ Bender ($b$)</li>
-<li class="slide">Professor ($p$) $\leftrightarrow$ Leela ($l$)</li>
-<li class="slide">Amy ($a$) $\leftrightarrow$ Wash Bucket ($w$)</li>
-<li class="slide">Fry ($f$) $\leftrightarrow$ Zoidberg ($z$)</li>
-<li class="slide">Emperor Nikolai ($e$) $\leftrightarrow$ Wash Bucket ($w$)</li>
-<li class="slide">Hermes ($h$)$\leftrightarrow$ Leela ($l$)</li>
+<li>Professor ($p$) $\leftrightarrow$ Amy ($a$)</li>
+<li>Amy ($a$) $\leftrightarrow$ Bender ($b$)</li>
+<li>Professor ($p$) $\leftrightarrow$ Leela ($l$)</li>
+<li>Amy ($a$) $\leftrightarrow$ Wash Bucket ($w$)</li>
+<li>Fry ($f$) $\leftrightarrow$ Zoidberg ($z$)</li>
+<li>Emperor Nikolai ($e$) $\leftrightarrow$ Wash Bucket ($w$)</li>
+<li>Hermes ($h$)$\leftrightarrow$ Leela ($l$)</li>
 </ul>
 <p class="slide">The upshot:
 \[a \rightarrow h \rightarrow l \rightarrow p \rightarrow b \rightarrow e \rightarrow w \rightarrow a \text{ and } f \leftrightarrow z\]
@@ -131,22 +128,24 @@ $(() => {
 <h2>The mind swap problem (continued)</h2>
 <p>The question is: </p>
 <blockquote class="slide">
-<p>Can the machine be used to put everyone's mind back in the proper body if we are <a>not</a> allowed to use the machine on the same pair of bodies more than once?</p>
+<p>Can the machine be used to put everyone's mind back in the proper body if we are <em>not</em> allowed to use the machine on the same pair of bodies more than once?</p>
 </blockquote>
-<p class="slide">We need to use math!</p>
 </section>
 
 <section class="slide">
 <h2>The symmetric group</h2>
-<p class="slide">We can model this problem in terms of permutations (i.e., rearrangements) of numbers.  It turns out that the set of all permutations of the numbers 1 through $n$ forms a "group" under composition.</p>
+<p class="slide">Model: permutations (i.e., rearrangements) of numbers. The set of all permutations of $S_n = \{1, …, n\}$ forms a <em>symmetric group</em> under composition:</p>
 
-<p class="slide">A <a>group</a> is a set with an associative binary operation satisfying:</p>
-<ul>
-<li class="slide"><h4>closure:</h4> the "product" of any two elements from the set is an element of the set.</li>
-<li class="slide"><h4>identity:</h4> there exists a "do nothing" element.</li>
-<li class="slide"><h4>inverses:</h4> for every element in the set, there exists another element in the set that "undoes" the original.</li>
-</ul>
-<p class="slide">The group of permutations of $\{1,2,\ldots, n\}$ is called the <a>symmetric group</a> and is denoted by $S_n$.</p>
+<p class="slide">It is symmetric because it contains <em>all</em> such permutations.</p>
+
+<div class="slide">
+	<p>A <em>group</em> is a set with an associative binary operation satisfying:</p>
+	<ul>
+		<li>closure</li>
+		<li>identity</li>
+		<li>inverses</li>
+	</ul>
+</div>
 </section>
 
 <section class="slide">
