@@ -60,6 +60,13 @@ $(() => {
 		}
 		e.preventDefault()
 	})
+
+	$('video').each((i, e) => e.pause())
+	$(document).bind('deck.change', (event, from, to) => {
+		const slides = $.deck('getSlides')
+		slides[from].find('video').each((i, e) => e.pause())
+		slides[to  ].find('video').each((i, e) => e.play())
+	})
 })
 </script>
 
@@ -120,7 +127,7 @@ em {
 
 <section class=slide id=solvable>
 <h2>Is this solvable?</h2>
-<video src=images/we-need-to-use-math.mp4 controls></video>
+<video src=images/we-need-to-use-math.mp4 autoplay></video>
 </section>
 
 <section class=slide id=model>
